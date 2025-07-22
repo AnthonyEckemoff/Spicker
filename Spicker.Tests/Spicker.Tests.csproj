@@ -1,21 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
     <TargetFramework>net9.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Logs\" />
+    <PackageReference Include="coverlet.collector" Version="6.0.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="Moq" Version="4.20.72" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="9.0.7" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="NodaTime" Version="3.2.2" />
-    <PackageReference Include="System.ComponentModel.Composition" Version="9.0.7" />
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Spicker\Spicker.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -57,12 +63,6 @@
     </Reference>
     <Reference Include="QuantConnect.Optimizer">
       <HintPath>..\..\Lean\Optimizer\bin\Debug\QuantConnect.Optimizer.dll</HintPath>
-    </Reference>
-    <Reference Include="QuantConnect.Queues">
-      <HintPath>..\..\Lean\Research\bin\Debug\QuantConnect.Queues.dll</HintPath>
-    </Reference>
-    <Reference Include="QuantConnect.Research">
-      <HintPath>..\..\Lean\Research\bin\Debug\QuantConnect.Research.dll</HintPath>
     </Reference>
     <Reference Include="QuantConnect.ToolBox">
       <HintPath>..\..\Lean\ToolBox\bin\Debug\QuantConnect.ToolBox.dll</HintPath>
